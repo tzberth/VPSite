@@ -8,9 +8,9 @@ An English-language VPS source radar. It tracks public, official provider pages 
 - Brand: `vps-deals`
 - Locale: `en-US`
 - Seeds: IONOS and VPS.NET promotion pages; OVHcloud US VPS pricing
-- Intended Cloudflare Pages project: `vps-deals-promo-radar`
+- Cloudflare Pages project: `vps-deals-promo-radar`
 
-The intended URL, `https://vps-deals-promo-radar.pages.dev`, is **not verified or deployed**. Change `domain` in `.ilang/site.ilang` to the actual Pages hostname before publishing, then run `python build.py` again.
+Pages hostname: `https://vps-deals-promo-radar-1tv.pages.dev`. The hostname is configured in `.ilang/site.ilang` so canonical links, Open Graph images, and the sitemap use the same address.
 
 ## Build locally
 
@@ -19,6 +19,7 @@ Python 3.12 or newer, standard library only:
 ```sh
 python scraper.py
 python build.py
+python verify.py
 ```
 
 The scraper checks robots.txt and reads only public HTML. If a source cannot be accessed, it preserves the last successfully checked entry with its original timestamp. If no source has ever been checked, the site shows an honest empty state. Data is in `data/offers.json`; generated pages are in `site/`.
@@ -29,7 +30,7 @@ To test that I-Lang configuration is active, change a provider or source in `.il
 
 The public repository is `https://github.com/tzberth/VPSite`. The GitHub Actions workflow runs every six hours and on manual dispatch. It commits verified data and generated HTML only when content changes. Scheduled workflows may be delayed or disabled after long repository inactivity; check the Actions tab periodically.
 
-Connect the repository in Cloudflare Pages. Set the build command to `python build.py` and the output directory to `site`. Update the domain in `.ilang/site.ilang` to the assigned Pages hostname and push again. Once online, check the home page, a detail page, `/sitemap.xml`, `/robots.txt`, and canonical links.
+Cloudflare Pages is connected to this repository with build command `python build.py` and output directory `site`. If the Pages hostname changes, update `domain` in `.ilang/site.ilang` and push again. Check the home page, a detail page, `/sitemap.xml`, `/robots.txt`, and canonical links after each domain change.
 
 ## Revenue rules
 
