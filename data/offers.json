@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": "ionos",
+    "provider": "IONOS",
+    "title": "Cheap VPS Hosting From $2/Month | IONOS",
+    "description": "Affordable VPS hosting » 24/7 support ✓ US data centers ✓ Free trial for 30 days ✓ Personal consultant ✓ Dedicated resources ✓",
+    "kind": "promotion",
+    "offer_url": "https://www.ionos.com/servers/cheap-vps",
+    "source_url": "https://www.ionos.com/servers/cheap-vps",
+    "fetched_at": "2026-09-24T23:30:22+00:00"
+  },
+  {
+    "id": "vps-net",
+    "provider": "VPS.NET",
+    "title": "VPS Hosting | VPS Servers | VPS.NET",
+    "description": "Cloud Virtual Private Servers VPS server hosting with Truly Flexible Cloud Servers, allowing you to completely customize your hosting environment. Choose and Build from 3 data centers, and over 100 OS templates.",
+    "kind": "promotion",
+    "offer_url": "https://www.vps.net/20credit/",
+    "source_url": "https://www.vps.net/20credit/",
+    "fetched_at": "2026-09-24T23:30:23+00:00"
+  },
+  {
+    "id": "ovhcloud-us",
+    "provider": "OVHcloud US",
+    "title": "VPS - Your virtual private server in the cloud | OVHcloud",
+    "description": "Migrate to the cloud with our VPS—all the advantages of a dedicated server at a lower price. Up to 8 vCores, 32 GB RAM, 640 GB NVMe, unlimited traffic.",
+    "kind": "pricing",
+    "offer_url": "https://us.ovhcloud.com/vps/",
+    "source_url": "https://us.ovhcloud.com/vps/",
+    "fetched_at": "2026-09-24T23:30:24+00:00"
+  }
+]

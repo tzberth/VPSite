@@ -7,7 +7,7 @@ An English-language VPS source radar. It tracks public, official provider pages 
 - Niche: VPS hosting
 - Brand: `vps-deals`
 - Locale: `en-US`
-- Seeds: Hostinger VPS, Akamai Linode credit page, DigitalOcean Droplet pricing
+- Seeds: IONOS and VPS.NET promotion pages; OVHcloud US VPS pricing
 - Intended Cloudflare Pages project: `vps-deals-promo-radar`
 
 The intended URL, `https://vps-deals-promo-radar.pages.dev`, is **not verified or deployed**. Change `domain` in `.ilang/site.ilang` to the actual Pages hostname before publishing, then run `python build.py` again.
@@ -27,7 +27,7 @@ To test that I-Lang configuration is active, change a provider or source in `.il
 
 ## GitHub and Cloudflare Pages
 
-Create a public repository named `vps-deals-promo-radar` and push these files. The GitHub Actions workflow runs every six hours and on manual dispatch. It commits verified data and generated HTML only when content changes. Scheduled workflows may be delayed or disabled after long repository inactivity; check the Actions tab periodically.
+The public repository is `https://github.com/tzberth/VPSite`. The GitHub Actions workflow runs every six hours and on manual dispatch. It commits verified data and generated HTML only when content changes. Scheduled workflows may be delayed or disabled after long repository inactivity; check the Actions tab periodically.
 
 Connect the repository in Cloudflare Pages. Set the build command to `python build.py` and the output directory to `site`. Update the domain in `.ilang/site.ilang` to the assigned Pages hostname and push again. Once online, check the home page, a detail page, `/sitemap.xml`, `/robots.txt`, and canonical links.
 

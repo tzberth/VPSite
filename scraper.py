@@ -76,7 +76,7 @@ def fetch(provider):
         'provider': provider['name'],
         'title': title[:160],
         'description': re.sub(r'\s+', ' ', page.description).strip()[:300],
-        'kind': 'official_source',
+        'kind': provider['kind'],
         'offer_url': provider['affiliate'] or url,
         'source_url': url,
         'fetched_at': datetime.now(timezone.utc).isoformat(timespec='seconds'),

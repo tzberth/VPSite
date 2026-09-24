@@ -49,7 +49,7 @@ def layout(site, path, title, description, body, schema):
 
 def card(item):
     page = f"/deals/{slug(item['provider'])}/"
-    return render('card.html', provider=esc(item['provider']), title=esc(item['title']),
+    return render('card.html', provider=esc(item['provider']), title=esc(item['title']), kind=esc(item['kind'].upper() + ' SOURCE'),
                   description=esc(item.get('description') or 'Explore the current terms at the official source.'),
                   page=page, checked=esc(item['fetched_at'][:10]))
 
@@ -90,7 +90,7 @@ def main():
             {'@type': 'ListItem', 'position': 2, 'name': r['provider'], 'item': f"https://{site['domain']}{provider_path}"}]}
         add(provider_path, f"{r['provider']} VPS source | {site['brand']}",
             f"Official {r['provider']} VPS source, last checked {r['fetched_at'][:10]}.",
-            render('provider.html', provider=esc(r['provider']), title=esc(r['title']), detail=detail_path,
+            render('provider.html', provider=esc(r['provider']), title=esc(r['title']), detail=detail_path, kind=esc(r['kind'].upper() + ' SOURCE'),
                    website=esc(provider['website']), checked=esc(r['fetched_at'][:10])),
             {'@context': 'https://schema.org', '@graph': [
                 {'@type': 'Service', 'name': f"{r['provider']} VPS hosting", 'provider': {'@type': 'Organization', 'name': r['provider']},
@@ -103,7 +103,7 @@ def main():
             service['offers'] = offer
         add(detail_path, f"{r['provider']}: {r['title']} | {site['brand']}",
             f"Official {r['provider']} source. Verify current terms and availability before buying.",
-            render('deal.html', provider=esc(r['provider']), title=esc(r['title']),
+            render('deal.html', provider=esc(r['provider']), title=esc(r['title']), kind=esc(r['kind'].upper() + ' SOURCE'),
                    description=esc(r.get('description') or 'See the provider page for current terms.'),
                    source=esc(r['source_url']), outbound=esc(r['offer_url']),
                    checked=esc(r['fetched_at'][:10]), provider_page=provider_path,

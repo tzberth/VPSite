@@ -2,9 +2,9 @@
 [TYPE:config][PROJECT:vps-deals][LANG:zh]
 ::STATE{@SITE, brand:vps-deals, niche:VPS hosting, domain:vps-deals-promo-radar.pages.dev, locale:en-US}
 ::MODULE{PROVIDERS|title:Official public sources}
-  Hostinger | https://www.hostinger.com | https://www.hostinger.com/vps-hosting |
-  Akamai Linode | https://www.linode.com | https://www.linode.com/lp/free-credit-100/ |
-  DigitalOcean | https://www.digitalocean.com | https://www.digitalocean.com/pricing/droplets |
+  IONOS | https://www.ionos.com | https://www.ionos.com/servers/cheap-vps | | promotion
+  VPS.NET | https://www.vps.net | https://www.vps.net/20credit/ | | promotion
+  OVHcloud US | https://us.ovhcloud.com | https://us.ovhcloud.com/vps/ | | pricing
 ::MODULE{FIELDS|title:Extract only verified fields}
   title price currency offer_url valid_until source_url fetched_at
 ::MODULE{RENDER|title:Pages and cadence}

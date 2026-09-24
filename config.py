@@ -25,7 +25,10 @@ def load_config():
         if inside and '|' in line:
             parts = [part.strip() for part in line.split('|')]
             if len(parts) >= 4 and parts[1].startswith('https://') and parts[2].startswith('https://'):
-                providers.append(dict(name=parts[0], website=parts[1], source=parts[2], affiliate=parts[3]))
+                kind = parts[4] if len(parts) > 4 else 'pricing'
+                if kind not in ('promotion', 'pricing'):
+                    raise ValueError(f'Invalid source kind for {parts[0]}')
+                providers.append(dict(name=parts[0], website=parts[1], source=parts[2], affiliate=parts[3], kind=kind))
     if not providers:
         raise ValueError('No providers in site.ilang')
     return site, providers
