@@ -7,7 +7,7 @@
     "kind": "promotion",
     "offer_url": "https://www.ionos.com/servers/cheap-vps",
     "source_url": "https://www.ionos.com/servers/cheap-vps",
-    "fetched_at": "2026-09-25T02:18:22+00:00"
+    "fetched_at": "2026-09-25T02:20:10+00:00"
   },
   {
     "id": "vps-net",
@@ -17,7 +17,7 @@
     "kind": "promotion",
     "offer_url": "https://www.vps.net/20credit/",
     "source_url": "https://www.vps.net/20credit/",
-    "fetched_at": "2026-09-25T02:18:23+00:00"
+    "fetched_at": "2026-09-25T02:20:11+00:00"
   },
   {
     "id": "ovhcloud-us",
@@ -27,6 +27,6 @@
     "kind": "pricing",
     "offer_url": "https://us.ovhcloud.com/vps/",
     "source_url": "https://us.ovhcloud.com/vps/",
-    "fetched_at": "2026-09-25T02:18:24+00:00"
+    "fetched_at": "2026-09-25T02:20:12+00:00"
   }
 ]
