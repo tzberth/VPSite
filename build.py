@@ -130,7 +130,7 @@ def main():
          'url': f"https://{site['domain']}/privacy/"})
     contact_email = f"contact@{site['domain']}"
     contact_body = render('legal.html', eyebrow='CONTACT', heading='Contact',
-                          intro=esc(f"Email {contact_email} for site questions, source corrections, or partnership inquiries."),
+                          intro=esc("Use the email address on this page for site questions, source corrections, or partnership inquiries."),
                           content=(f'<h2>Email</h2><p>The only contact channel for this static site is '
                                    f'<a href="mailto:{esc(contact_email)}">{esc(contact_email)}</a>.</p>'
                                    '<p>There is no contact form because the site is published as static pages without a custom application server.</p>'))
