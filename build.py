@@ -62,6 +62,12 @@ def card(item):
                   page=page, checked=esc(item['fetched_at'][:10]))
 
 
+def store_card(item):
+    return render('store_card.html', provider=esc(item['provider']), kind=esc(item['kind'].upper() + ' SOURCE'),
+                  description=esc(item.get('description') or 'Explore the current terms at the official source.'),
+                  page=f"/providers/{slug(item['provider'])}/", checked=esc(item['fetched_at'][:10]))
+
+
 def main():
     site, providers = load_config()
     provider_map = {p['name']: p for p in providers}
@@ -70,8 +76,10 @@ def main():
     records = [r for r in records if r.get('provider') in provider_map and r.get('source_url') == provider_map[r['provider']]['source']]
     records = [r for r in records if not r.get('valid_until') or r['valid_until'] >= datetime.now().date().isoformat()]
     OUT.mkdir(exist_ok=True)
-    cards = ''.join(card(r) for r in records) or '<p class="empty">No verified sources are available yet. Check back after the next update.</p>'
-    list_items = [{'@type': 'ListItem', 'position': i, 'url': f"https://{site['domain']}/deals/{slug(r['provider'])}/"} for i, r in enumerate(records, 1)]
+    cards = ''.join(card(r) for r in records if provider_map[r['provider']].get('mode', 'dual') == 'dual') or '<p class="empty">No verified sources are available yet. Check back after the next update.</p>'
+    stores = ''.join(store_card(r) for r in records if provider_map[r['provider']].get('mode', 'dual') == 'single')
+    dual_records = [r for r in records if provider_map[r['provider']].get('mode', 'dual') == 'dual']
+    list_items = [{'@type': 'ListItem', 'position': i, 'url': f"https://{site['domain']}/deals/{slug(r['provider'])}/"} for i, r in enumerate(dual_records, 1)]
     pages = []
 
     def add(path, title, description, body, schema, lastmod=None):
@@ -80,14 +88,15 @@ def main():
 
     add('/', f"VPS offers and official plans | {site['brand']}",
         'Verified official VPS offer and plan pages, with source links and last checked dates.',
-        render('index.html', cards=cards, count=len(records)),
+        render('index.html', cards=cards, count=len([r for r in records if provider_map[r['provider']].get('mode', 'dual') == 'dual']), stores=stores,
+               store_count=len([r for r in records if provider_map[r['provider']].get('mode', 'dual') == 'single'])),
         {'@context': 'https://schema.org', '@type': 'ItemList', 'itemListElement': list_items},
         max((r['fetched_at'][:10] for r in records), default=None))
     add('/compare/', f"Compare VPS sources | {site['brand']}",
         'Compare official VPS offer and pricing sources. Check live terms with each provider.',
         render('compare.html', rows=''.join(render('row.html', provider=esc(r['provider']), title=esc(r['title']),
                                            page=f"/deals/{slug(r['provider'])}/", source=esc(r['source_url']),
-                                           checked=esc(r['fetched_at'][:10])) for r in records)),
+                                           checked=esc(r['fetched_at'][:10])) for r in dual_records)),
         {'@context': 'https://schema.org', '@type': 'ItemList', 'itemListElement': list_items})
     add('/about/', f"About | {site['brand']}",
         f"About {site['brand']} and how it tracks official VPS source pages.",
@@ -143,6 +152,17 @@ def main():
         provider = provider_map[r['provider']]
         provider_path = f"/providers/{slug(r['provider'])}/"
         detail_path = f"/deals/{slug(r['provider'])}/"
+        if provider.get('mode', 'dual') == 'single':
+            add(provider_path, f"{r['provider']} VPS source | {site['brand']}",
+                f"Official {r['provider']} VPS source, last checked {r['fetched_at'][:10]}.",
+                render('store.html', provider=esc(r['provider']), title=esc(r['title']),
+                       description=esc(r.get('description') or 'See the official provider page for current terms.'),
+                       kind=esc(r['kind'].upper() + ' SOURCE'), source=esc(r['source_url']),
+                       checked=esc(r['fetched_at'][:10])),
+                {'@context': 'https://schema.org', '@type': 'Service',
+                 'name': f"{r['provider']} VPS hosting", 'provider': {'@type': 'Organization', 'name': r['provider']},
+                 'url': f"https://{site['domain']}{provider_path}"}, r['fetched_at'][:10])
+            continue
         breadcrumb = {'@type': 'BreadcrumbList', 'itemListElement': [
             {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': f"https://{site['domain']}/"},
             {'@type': 'ListItem', 'position': 2, 'name': r['provider'], 'item': f"https://{site['domain']}{provider_path}"}]}

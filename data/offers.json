@@ -7,7 +7,7 @@
     "kind": "promotion",
     "offer_url": "https://www.ionos.com/servers/cheap-vps",
     "source_url": "https://www.ionos.com/servers/cheap-vps",
-    "fetched_at": "2026-09-25T14:47:05+00:00"
+    "fetched_at": "2026-09-25T14:58:36+00:00"
   },
   {
     "id": "vps-net",
@@ -17,7 +17,7 @@
     "kind": "promotion",
     "offer_url": "https://www.vps.net/20credit/",
     "source_url": "https://www.vps.net/20credit/",
-    "fetched_at": "2026-09-25T14:47:06+00:00"
+    "fetched_at": "2026-09-25T14:58:37+00:00"
   },
   {
     "id": "ovhcloud-us",
@@ -27,6 +27,86 @@
     "kind": "pricing",
     "offer_url": "https://us.ovhcloud.com/vps/",
     "source_url": "https://us.ovhcloud.com/vps/",
-    "fetched_at": "2026-09-25T14:47:07+00:00"
+    "fetched_at": "2026-09-25T14:58:38+00:00"
+  },
+  {
+    "id": "hetzner-cloud",
+    "provider": "Hetzner Cloud",
+    "title": "Cloud-hosting provider for developers & teams",
+    "description": "Cloud-hosting provider for developers & teams. Scalable cloud hosting services – join 400,000+ customers ✓ GDPR-compliant",
+    "kind": "pricing",
+    "offer_url": "https://www.hetzner.com/cloud/",
+    "source_url": "https://www.hetzner.com/cloud/",
+    "fetched_at": "2026-09-25T14:58:39+00:00"
+  },
+  {
+    "id": "buyvm",
+    "provider": "BuyVM",
+    "title": "BuyVM - KVM Slices Dedicated Server Performance with 100% SSD Storage and DDoS Protection Available",
+    "description": "",
+    "kind": "pricing",
+    "offer_url": "https://buyvm.net/kvm-dedicated-server-slices/",
+    "source_url": "https://buyvm.net/kvm-dedicated-server-slices/",
+    "fetched_at": "2026-09-25T14:58:40+00:00"
+  },
+  {
+    "id": "clouvider",
+    "provider": "Clouvider",
+    "title": "Clouvider Limited",
+    "description": "",
+    "kind": "pricing",
+    "offer_url": "https://console.clouvider.co.uk/products/",
+    "source_url": "https://console.clouvider.co.uk/products/",
+    "fetched_at": "2026-09-25T14:58:42+00:00"
+  },
+  {
+    "id": "hostwinds",
+    "provider": "Hostwinds",
+    "title": "Linux VPS Hosting, SSD Virtual Private Servers | Hostwinds",
+    "description": "Deploy Linux VPS hosting with root access, SSD storage, scalable resources, and multiple Linux operating systems.",
+    "kind": "pricing",
+    "offer_url": "https://www.hostwinds.com/vps/linux",
+    "source_url": "https://www.hostwinds.com/vps/linux",
+    "fetched_at": "2026-09-25T14:58:42+00:00"
+  },
+  {
+    "id": "servarica",
+    "provider": "ServaRica",
+    "title": "Canadian VPS, Storage & Dedicated Servers - ServaRica",
+    "description": "ServaRica — Canadian server provider since 2010. KVM VPS, NVMe storage, dedicated servers in Montreal. 99.99% SLA with cash refund, no overselling, 100% renewable power.",
+    "kind": "pricing",
+    "offer_url": "https://servarica.com/",
+    "source_url": "https://servarica.com/",
+    "fetched_at": "2026-09-25T14:58:43+00:00"
+  },
+  {
+    "id": "servers-com",
+    "provider": "Servers.com",
+    "title": "Cloud Server Hosting Provider | Servers.com by Nexcess",
+    "description": "Rent a cloud server for near-instant scalability with a pay-as-you-go pricing model. Contact us for a bespoke solution for your business needs",
+    "kind": "pricing",
+    "offer_url": "https://www.servers.com/products/cloud-servers",
+    "source_url": "https://www.servers.com/products/cloud-servers",
+    "fetched_at": "2026-09-25T14:58:45+00:00"
+  },
+  {
+    "id": "cloudcone",
+    "provider": "CloudCone",
+    "title": "Virtual Private Servers (VPS) - CloudCone",
+    "description": "Affordable, yet powerful Virtual Private Servers deployed instantly. For quick, general-purpose VPS computing.",
+    "kind": "pricing",
+    "offer_url": "https://cloudcone.com/vps/",
+    "source_url": "https://cloudcone.com/vps/",
+    "fetched_at": "2026-09-25T14:58:46+00:00"
+  },
+  {
+    "id": "serverspace",
+    "provider": "Serverspace",
+    "title": "Cloud VPS Ready in 40 seconds 🚀 from 4.1€/mo",
+    "description": "Start hosting a Cloud Virtual Private Server with 100 Mbps channel, SLA 99,9%, Pay-as-you-go, 24/7 support from 4.1€/mo.",
+    "kind": "pricing",
+    "offer_url": "https://serverspace.io/services/vps-server/",
+    "source_url": "https://serverspace.io/services/vps-server/",
+    "fetched_at": "2026-09-25T14:58:49+00:00"
   }
 ]

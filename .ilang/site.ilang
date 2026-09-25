@@ -5,6 +5,36 @@
   IONOS | https://www.ionos.com | https://www.ionos.com/servers/cheap-vps | | promotion
   VPS.NET | https://www.vps.net | https://www.vps.net/20credit/ | | promotion
   OVHcloud US | https://us.ovhcloud.com | https://us.ovhcloud.com/vps/ | | pricing
+  Hetzner Cloud | https://www.hetzner.com | https://www.hetzner.com/cloud/ | | pricing | single
+  BuyVM | https://buyvm.net | https://buyvm.net/kvm-dedicated-server-slices/ | | pricing | single
+  RackNerd | https://www.racknerd.com | https://www.racknerd.com/specials/ | | promotion | single
+  Time4VPS | https://www.time4vps.com | https://www.time4vps.com/ | | promotion | single
+  GreenCloud VPS | https://greencloudvps.com | https://greencloudvps.com/ | | pricing | single
+  Webdock | https://webdock.io | https://webdock.io/pricing?cat=custom-vps | | pricing | single
+  AlphaVPS | https://alphavps.com | https://alphavps.com/high-performance-vps | | pricing | single
+  Clouvider | https://www.clouvider.com | https://console.clouvider.co.uk/products/ | | pricing | single
+  HostHatch | https://hosthatch.com | https://hosthatch.com/ | | pricing | single
+  Hostwinds | https://www.hostwinds.com | https://www.hostwinds.com/vps/linux | | pricing | single
+  InterServer | https://www.interserver.net | https://www.interserver.net/vps/ | | pricing | single
+  DreamHost | https://www.dreamhost.com | https://www.dreamhost.com/hosting/vps/ | | pricing | single
+  InMotion Hosting | https://www.inmotionhosting.com | https://www.inmotionhosting.com/vps-hosting | | pricing | single
+  Kamatera | https://www.kamatera.com | https://www.kamatera.com/express/compute/ | | pricing | single
+  Scaleway | https://www.scaleway.com | https://www.scaleway.com/en/pricing/ | | pricing | single
+  ServerMania | https://www.servermania.com | https://www.servermania.com/kb/articles/vps-hosting/ | | pricing | single
+  Cloudzy | https://cloudzy.com | https://cloudzy.com/vps/ | | pricing | single
+  Contabo | https://contabo.com | https://contabo.com/en/vps/ | | pricing | single
+  RamNode | https://ramnode.com | https://ramnode.com/pricing | | pricing | single
+  ServaRica | https://servarica.com | https://servarica.com/ | | pricing | single
+  Servers.com | https://www.servers.com | https://www.servers.com/products/cloud-servers | | pricing | single
+  NoBull Networks | https://www.nobullnetworks.com | https://www.nobullnetworks.com/products/foundational-vps/ | | pricing | single
+  HostGator | https://www.hostgator.com | https://www.hostgator.com/vps-hosting | | pricing | single
+  VPSServer | https://www.vpsserver.com | https://www.vpsserver.com/en-us/plans/ | | pricing | single
+  Cherry Servers | https://www.cherryservers.com | https://www.cherryservers.com/pricing/virtual-servers | | pricing | single
+  HostUS | https://hostus.us | https://hostus.us/ | | pricing | single
+  SSD Nodes | https://www.ssdnodes.com | https://www.ssdnodes.com/ | | pricing | single
+  CloudCone | https://cloudcone.com | https://cloudcone.com/vps/ | | pricing | single
+  Amazon Lightsail | https://aws.amazon.com | https://aws.amazon.com/lightsail/pricing/ | | pricing | single
+  Serverspace | https://serverspace.io | https://serverspace.io/services/vps-server/ | | pricing | single
 ::MODULE{FIELDS|title:Extract only verified fields}
   title price currency offer_url valid_until source_url fetched_at
 ::MODULE{RENDER|title:Pages and cadence}
