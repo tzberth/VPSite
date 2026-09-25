@@ -132,7 +132,7 @@ def main():
     contact_body = render('legal.html', eyebrow='CONTACT', heading='Contact',
                           intro=esc("Use the email address on this page for site questions, source corrections, or partnership inquiries."),
                           content=(f'<h2>Email</h2><p>The only contact channel for this static site is '
-                                   f'<a href="mailto:{esc(contact_email)}">{esc(contact_email)}</a>.</p>'
+                                   f'<a href="mailto:contact%40{esc(site["domain"])}">contact&#64;{esc(site["domain"])}</a>.</p>'
                                    '<p>There is no contact form because the site is published as static pages without a custom application server.</p>'))
     add('/contact/', f"Contact | {site['brand']}",
         f"Contact {site['brand']}.",
