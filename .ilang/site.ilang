@@ -8,7 +8,7 @@
 ::MODULE{FIELDS|title:Extract only verified fields}
   title price currency offer_url valid_until source_url fetched_at
 ::MODULE{RENDER|title:Pages and cadence}
-  index provider deal compare | every 6 hours | English United States
+  index provider deal compare about privacy contact | every 6 hours | English United States
 ::RULE{Missing price⇒omit price and price structured data}
 ::RULE{Expired valid_until⇒remove from active pages}
 ::RULE{Offer pages and pricing guides must be labeled accurately; no invented discount}

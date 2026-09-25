@@ -40,6 +40,14 @@ def jsonld(value):
     return '<script type="application/ld+json">' + json.dumps(value, ensure_ascii=False).replace('<', '\\u003c') + '</script>'
 
 
+def legal_page(eyebrow, heading, intro, sections):
+    content = ''.join(
+        f'<h2>{esc(title)}</h2>' + ''.join(f'<p>{esc(paragraph)}</p>' for paragraph in paragraphs)
+        for title, paragraphs in sections
+    )
+    return render('legal.html', eyebrow=esc(eyebrow), heading=esc(heading), intro=esc(intro), content=content)
+
+
 def layout(site, path, title, description, body, schema):
     url = f"https://{site['domain']}{path}"
     return render('base.html', lang=esc(site.get('locale', 'en-US')), brand=esc(site['brand']),
@@ -81,6 +89,56 @@ def main():
                                            page=f"/deals/{slug(r['provider'])}/", source=esc(r['source_url']),
                                            checked=esc(r['fetched_at'][:10])) for r in records)),
         {'@context': 'https://schema.org', '@type': 'ItemList', 'itemListElement': list_items})
+    add('/about/', f"About | {site['brand']}",
+        f"About {site['brand']} and how it tracks official VPS source pages.",
+        legal_page('ABOUT', f"About {site['brand']}",
+                   f"{site['brand']} is an independent VPS source tracker built for readers who want to check provider pages before they buy.",
+                   [
+                       ('What this site does', [
+                           f"{site['brand']} collects a small set of official VPS provider pages and shows the source link, page type, and last checked date in one place.",
+                           'The site separates promotion sources from standard pricing sources so readers can see whether a page is an offer page or a regular pricing page.'
+                       ]),
+                       ('Where the data comes from', [
+                           'The site only uses public provider pages that can be reached without a private account. The current source list is defined in the site configuration and rebuilt on a schedule.',
+                           'Each listing links back to the provider page because prices, eligibility, renewal terms, and availability can change at the provider.'
+                       ]),
+                       ('Who runs it', [
+                           f"The site is published under the {site['brand']} name. It does not use a personal author name on public pages."
+                       ])
+                   ]),
+        {'@context': 'https://schema.org', '@type': 'AboutPage', 'name': f"About {site['brand']}",
+         'url': f"https://{site['domain']}/about/"})
+    add('/privacy/', f"Privacy Policy | {site['brand']}",
+        f"Privacy policy for {site['brand']}.",
+        legal_page('PRIVACY', 'Privacy Policy',
+                   f"{site['brand']} is a static website that tracks public VPS provider pages and sends readers to the original source pages.",
+                   [
+                       ('Information this site uses', [
+                           'The site collects information from public provider pages, such as the provider name, the source URL, the page title, a short public description, and the date the source was last checked.',
+                           'The site does not run a contact form and does not ask visitors to create an account.'
+                       ]),
+                       ('Advertising and affiliate links', [
+                           'This site is built to include third-party advertising and affiliate links. If a link is sponsored or affiliate, the page will disclose it where the link appears.',
+                           'When visitors click out to a provider, ad network, affiliate network, or other third-party website, that third party handles its own logs, cookies, and privacy practices under its own policy.'
+                       ]),
+                       ('Server and platform logs', [
+                           'The site is hosted on Cloudflare Pages. Cloudflare may process basic request data needed to serve the website, protect it, and provide platform analytics.',
+                           f"For privacy questions about this site, contact contact@{site['domain']}."
+                       ])
+                   ]),
+        {'@context': 'https://schema.org', '@type': 'WebPage', 'name': 'Privacy Policy',
+         'url': f"https://{site['domain']}/privacy/"})
+    contact_email = f"contact@{site['domain']}"
+    contact_body = render('legal.html', eyebrow='CONTACT', heading='Contact',
+                          intro=esc(f"Email {contact_email} for site questions, source corrections, or partnership inquiries."),
+                          content=(f'<h2>Email</h2><p>The only contact channel for this static site is '
+                                   f'<a href="mailto:{esc(contact_email)}">{esc(contact_email)}</a>.</p>'
+                                   '<p>There is no contact form because the site is published as static pages without a custom application server.</p>'))
+    add('/contact/', f"Contact | {site['brand']}",
+        f"Contact {site['brand']}.",
+        contact_body,
+        {'@context': 'https://schema.org', '@type': 'ContactPage', 'name': f"Contact {site['brand']}",
+         'url': f"https://{site['domain']}/contact/"})
     for r in records:
         provider = provider_map[r['provider']]
         provider_path = f"/providers/{slug(r['provider'])}/"
