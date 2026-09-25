@@ -10,7 +10,7 @@ An English-language VPS source radar. It tracks public, official provider pages 
 - Seeds: IONOS and VPS.NET promotion pages; OVHcloud US VPS pricing
 - Cloudflare Pages project: `vps-deals-promo-radar`
 
-Pages hostname: `https://vps-deals-promo-radar-1tv.pages.dev`. The hostname is configured in `.ilang/site.ilang` so canonical links, Open Graph images, and the sitemap use the same address.
+Production hostname: `https://vpsdealscout.com`. The hostname is configured in `.ilang/site.ilang` so canonical links, Open Graph images, and the sitemap use the same address.
 
 ## Build locally
 
