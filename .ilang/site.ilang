@@ -1,6 +1,6 @@
 ::ILANG
-[TYPE:config][PROJECT:vps-deals][LANG:zh]
-::STATE{@SITE, brand:vps-deals, niche:VPS hosting, domain:vpsdealscout.com, locale:en-US}
+[TYPE:config][PROJECT:vpsdealscout][LANG:zh]
+::STATE{@SITE, brand:vpsdealscout, niche:VPS hosting, domain:vpsdealscout.com, locale:en-US}
 ::MODULE{PROVIDERS|title:Official public sources}
   IONOS | https://www.ionos.com | https://www.ionos.com/servers/cheap-vps | | promotion
   VPS.NET | https://www.vps.net | https://www.vps.net/20credit/ | | promotion

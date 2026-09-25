@@ -1,11 +1,11 @@
-# vps-deals
+# vpsdealscout
 
 An English-language VPS source radar. It tracks public, official provider pages and sends readers to the original source to verify live pricing and terms. The site does not invent discounts or prices.
 
 ## Defaults used
 
 - Niche: VPS hosting
-- Brand: `vps-deals`
+- Brand: `vpsdealscout`
 - Locale: `en-US`
 - Seeds: IONOS and VPS.NET promotion pages; OVHcloud US VPS pricing
 - Cloudflare Pages project: `vps-deals-promo-radar`
@@ -28,7 +28,7 @@ To test that I-Lang configuration is active, change a provider or source in `.il
 
 ## GitHub and Cloudflare Pages
 
-The public repository is `https://github.com/tzberth/VPSite`. The GitHub Actions workflow runs every six hours and on manual dispatch. It commits verified data and generated HTML only when content changes. Scheduled workflows may be delayed or disabled after long repository inactivity; check the Actions tab periodically.
+The public repository is `https://github.com/tzberth/vpsdealscout`. The GitHub Actions workflow runs every six hours and on manual dispatch. It commits verified data and generated HTML only when content changes. Scheduled workflows may be delayed or disabled after long repository inactivity; check the Actions tab periodically.
 
 Cloudflare Pages is connected to this repository with build command `python build.py` and output directory `site`. If the Pages hostname changes, update `domain` in `.ilang/site.ilang` and push again. Check the home page, a detail page, `/sitemap.xml`, `/robots.txt`, and canonical links after each domain change.
 
